@@ -1,18 +1,17 @@
-package vistas;
+package views;
 
 import javax.swing.*;
-import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
-public class Ventana extends JFrame implements ActionListener {
+public class EmpleadoView extends JFrame {
 
     JLabel etiq1, etiq2, etiq3;
-    JTextField txtNombre, txtApellido;
-    JButton boton1, boton2;
+    public JTextField txtNombre, txtApellido;
+    public JButton botonAceptar, boton2;
     JPanel panel;
 
-    Ventana() {
+    public EmpleadoView() {
 
         setTitle("ALTA EMPLEADOS");
 
@@ -31,8 +30,8 @@ public class Ventana extends JFrame implements ActionListener {
         txtApellido = new JTextField();
         txtApellido.setBounds(100, 120, 180, 20);
 
-        boton1 = new JButton("aceptar");
-        boton1.setBounds(200, 180, 100, 20);
+        botonAceptar = new JButton("aceptar");
+        botonAceptar.setBounds(200, 180, 100, 20);
 
         boton2 = new JButton("cancelar");
         boton2.setBounds(300, 180, 100, 20);
@@ -45,21 +44,12 @@ public class Ventana extends JFrame implements ActionListener {
         panel.add(etiq3);
         panel.add(txtNombre);
         panel.add(txtApellido);
-        panel.add(boton1);
+        panel.add(botonAceptar);
         panel.add(boton2);
 
         add(panel);
         setSize(800,600);
         setVisible(true);
-
-    }
-
-    public static void main(String[] args) {
-        Ventana nuevaVentana = new Ventana();
-        nuevaVentana.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-    }
-    @Override
-    public void actionPerformed(ActionEvent e) {
 
     }
 }

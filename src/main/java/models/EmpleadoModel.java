@@ -1,21 +1,18 @@
-import java.util.*;
+package models;
 
-class AltaEmpleado {
+public class EmpleadoModel {
 
     private String nombre;
     private String apellido;
     private String seccion;
-    private int id;
-    private static int idSiguiente = 1;
+    private static int id = 1;
 
+    public EmpleadoModel(){}
 
-    public AltaEmpleado(String nom, String ape){
+    public EmpleadoModel(String nom, String ape){
         nombre = nom;
         apellido = ape;
-        id = idSiguiente;
-        idSiguiente++;
     }
-
 
     public String getNombre() {
         return nombre;
@@ -37,16 +34,8 @@ class AltaEmpleado {
         return id;
     }
 
-    public void setId(int id) {
-        this.id = id;
+    public void create() {
+        System.out.println("¡Bienvenido Empleado " + id + " " + nombre + " " + apellido + "!");
+        id++;
     }
-
-    public static int getIdSiguiente() {
-        return idSiguiente;
-    }
-
-    public static void setIdSiguiente(int idSiguiente) {
-        AltaEmpleado.idSiguiente = idSiguiente;
-    }
-
 }
